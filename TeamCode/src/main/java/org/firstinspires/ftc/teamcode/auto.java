@@ -19,7 +19,7 @@ public class auto extends OpMode{
     @Override
     public void init() {
         follower = Constants.create(hardwareMap);
-        follower.setPose(startPose);
+
     }
 
     @Override
