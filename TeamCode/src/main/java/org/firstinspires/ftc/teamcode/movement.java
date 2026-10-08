@@ -5,7 +5,8 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
 
-public class movement {
+public class movement
+{
     public DcMotor frontLeftDrive;
     public DcMotor backLeftDrive;
     public DcMotor frontRightDrive;
@@ -13,7 +14,8 @@ public class movement {
 
     //public DcMotor intake;
 
-    public movement(HardwareMap hardwareMap) {
+    public movement(HardwareMap hardwareMap)
+    {
         // Initialize the hardware variables. Note that the strings used here must correspond
         // to the names assigned during the robot configuration step on the DS or RC devices.
         frontLeftDrive = hardwareMap.get(DcMotor.class, "frontLeft");
@@ -29,7 +31,8 @@ public class movement {
         //intake.setDirection(DcMotor.Direction.FORWARD);
     }
 
-    public void teleopDrive(Gamepad gamepad1) {
+    public void teleopDrive(Gamepad gamepad1)
+    {
         double max;
 
         // POV Mode uses left joystick to go forward & strafe, and right joystick to rotate.
@@ -64,7 +67,8 @@ public class movement {
         max = Math.max(max, Math.abs(backLeftPowerSet));
         max = Math.max(max, Math.abs(backRightPowerSet));
 
-        if (max > 1.0) {
+        if (max > 1.0)
+        {
             frontLeftPowerSet /= max;
             frontRightPowerSet /= max;
             backLeftPowerSet /= max;

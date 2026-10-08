@@ -11,13 +11,15 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 
 
 @TeleOp
-public class main extends LinearOpMode {
+public class main extends LinearOpMode
+{
     private movement drive;
     private intake intake;
     private shooter shooter;
 
     @Override
-    public void runOpMode() {
+    public void runOpMode()
+    {
         drive = new movement(hardwareMap);
         shooter = new shooter(hardwareMap);
         intake = new intake(hardwareMap);
@@ -33,9 +35,9 @@ public class main extends LinearOpMode {
             telemetry.addData("LT", gamepad1.left_trigger);
             telemetry.update();
 
-
-
             drive.teleopDrive(gamepad1);
+            shooter.teleopDrive(gamepad1);
+            intake.teleopDrive(gamepad1);
 
             telemetry.addData("Status", "Running");
             telemetry.update();
